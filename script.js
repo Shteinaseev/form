@@ -5,10 +5,10 @@ class FormsValidation {
   }
 
   errorMessages = {
-    valueMissing: () => 'Пожалуйста, заполните это поле',
-    patternMismatch: ({ title }) => title || 'Данные не соответствуют формату',
-    tooShort: ({ minLength }) => `Слишком короткое значение, минимум символов — ${minLength}`,
-    tooLong: ({ maxLength }) => `Слишком длинное значение, ограничение символов — ${maxLength}`,
+    valueMissing: () => 'Молимо вас да попуните ово поље',
+    patternMismatch: ({ title }) => title || 'Подаци не одговарају формату',
+    tooShort: ({ minLength }) => `Вредност је прекратка, минималан број знакова — ${minLength}`,
+    tooLong: ({ maxLength }) => `Вредност је предугачка, ограничење броја знакова — ${maxLength}`,
   }
 
   constructor() {
@@ -16,10 +16,10 @@ class FormsValidation {
   }
 
   manageErrors(fieldControlElement, errorMessages) {
-    const fieldErrorsElement = fieldControlElement.parentElement.querySelector(this.selectors.fieldErrors)
+    const fieldErrorsElement = fieldControlElement.parentElement.nextElementSibling
 
     fieldErrorsElement.innerHTML = errorMessages
-      .map((message) => `<span class="field__error">${message}</span>`)
+      .map((message) => `<span class="field-errors">${message}</span>`)
       .join('')
   }
 

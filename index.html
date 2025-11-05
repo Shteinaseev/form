@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -8,38 +9,55 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
+
 <body>
     <svg style="display: none">
         <filter id="glass-distortion">
-        <feTurbulence type="turbulence" baseFrequency="0.008" numOctaves="2" result="noise" />
-        <feDisplacementMap in="SourceGraphic" in2="noise" scale="77" />
+            <feTurbulence type="turbulence" baseFrequency="0.008" numOctaves="2" result="noise" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="77" />
         </filter>
     </svg>
-    <form id="regForm" action="/regestration" method="post" novalidate data-js-form>        
+    <form id="regForm" action="/registration" method="post" novalidate data-js-form>
         <div class="glass-filter"></div>
         <div class="glass-overlay"></div>
         <div class="glass-specular"></div>
         <div class="glass-content">
+            <h1>Kontakt forma</h1>
             <div class="form-group">
-                <label for="ur">Username</label>
+                <label for="ur">Ime</label>
                 <div class="block">
-                    <input id="ur" type="text" minlength="3" maxlength="15" required>
+                    <input id="ur" name="name" class="field-control" type="text" minlength="3" maxlength="15" required
+                        aria-errormessage="name-errors">
                     <i class="bx bxs-user"></i>
                 </div>
+                <span class="field-errors" id="name-errors" data-js-form-field-errors></span>
             </div>
             <div class="form-group">
-                <label for="ps">Password</label>
+                <label for="pr">Prezime</label>
                 <div class="block">
-                    <input id="ps" type="password" minlength="8" 
-                    maxlength="16"
-                    pattern="/^[a-zA-Z0-9!@#\$%\^\&*_=+-]{8,12}$/g"
-                     required>
-                    <i class="bx bxs-lock-alt"></i>
+                    <input id="pr" name="surname" class="field-control" type="text" minlength="3" maxlength="15"
+                        required aria-errormessage="surname-errors">
+                    <i class="bx bxs-user"></i>
                 </div>
+                <span class="field-errors" id="surname-errors" data-js-form-field-errors></span>
             </div>
             <div class="form-group">
-                <label for="desc">Description</label>
-                <textarea name="desc" id="desc" required></textarea>
+                <label for="pr">JMBG</label>
+                <div class="block">
+                    <input id="JMBG" name="jmbg" class="field-control" type="number" pattern="\d*" minlength="3"
+                        required aria-errormessage="jmbg-errors">
+                    <i class="bx bxs-user"></i>
+                </div>
+                <span class="field-errors" id="jmbg-errors" data-js-form-field-errors></span>
+            </div>
+            <div class="form-group">
+                <label for="pr">Imejl</label>
+                <div class="block">
+                    <input id="email" name="email" class="field-control" type="email" maxlength="13" required
+                        aria-errormessage="email-errors">
+                    <i class="bx bxs-user"></i>
+                </div>
+                <span class="field-errors" id="email-errors" data-js-form-field-errors></span>
             </div>
             <fieldset>
                 <legend>Gender</legend>
@@ -48,14 +66,15 @@
                 <input type="radio" id="female" name="gender" value="female">
                 <label for="female">Woman</label>
                 <input type="radio" id="other" name="gender" value="other">
-                <label for="other">Other</label>            
+                <label for="other">Other</label>
             </fieldset>
-            <div class="checkbox">
-                <input type="checkbox" id="agreement" name="agreement" required/>
-                <label for="agreement">Accept everything</label>
-            </div>
+            <span class="field__errors" id="gender-errors" data-js-form-field-errors></span>
             <button class="subBtn" type="submit">Registration</button>
         </div>
     </form>
+    <div id="canvas-container"></div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+<script src="sphere.js"></script>
+
 </html>

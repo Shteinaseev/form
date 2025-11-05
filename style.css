@@ -1,35 +1,66 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-input, textarea {
+input,
+textarea {
     background-color: transparent;
     outline: none;
     border: none;
 }
 
-textarea {
-    resize: none;
+/* Chrome, Safari, Edge, Opera */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    margin: 0;
+    -webkit-appearance: none;
 }
 
-body{
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+#canvas-container {
+    width: 100vw;
+    height: 200vh;
+    aspect-ratio: 1;
+    position: fixed;
+    top: 20%;
+    left: 0;
+    z-index: -1;
+}
+
+body {
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: radial-gradient(circle closest-corner,#060a33,#000);
+    background-image: radial-gradient(circle closest-corner, #060a33, #000);
     font-family: 'Inter', sans-serif;
     font-weight: 400;
 }
 
-form{
+h1 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+span {
+    color: #f9854b;
+    font-size: 0.9rem;
+}
+
+form {
     position: relative;
-    width: 35vw;
+    width: 28vw;
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -39,52 +70,52 @@ form{
 .glass-filter,
 .glass-overlay,
 .glass-specular {
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
 }
 
 .glass-filter {
-  z-index: 1;
-  backdrop-filter: blur(4px);
-  filter: url(#glass-distortion) saturate(120%) brightness(1.15);
+    z-index: 1;
+    backdrop-filter: blur(4px);
+    filter: url(#glass-distortion) saturate(120%) brightness(1.15);
 }
 
 .glass-overlay {
-  z-index: 2;
+    z-index: 2;
 }
 
 .glass-specular {
-  z-index: 3;
-  box-shadow: inset 1px 1px 1px #ffffff22;
+    z-index: 3;
+    box-shadow: inset 1px 1px 1px #ffffff22;
 }
 
 .glass-content {
-  position: relative;
-  z-index: 4;
-  padding: 30px;
-  color: #ffffff77;
-  height: 100%;
+    position: relative;
+    z-index: 4;
+    padding: 30px;
+    color: #ffffff77;
+    height: 100%;
 }
 
-.form-group{
+.form-group {
     display: flex;
     flex-direction: column;
     gap: 5px;
     padding-block: 5px
 }
 
-.form-group label{
+.form-group label {
     font-size: 1.2rem;
 }
 
-.block{
+.block {
     width: 100%;
     position: relative;
     z-index: 2;
 }
 
-.block input, .form-group textarea {
+.block input {
     width: 100%;
     background-color: #ffffff10;
     backdrop-filter: blur(10px);
@@ -94,19 +125,18 @@ form{
     font-size: 1rem;
     color: #fff;
     font-weight: 300;
-    transition: .3s;    
+    transition: .3s;
+    height: 45px;
 }
 
-.block input {
-    height: 40px;
-}
+
 
 .form-group textarea {
     height: 65px;
 }
 
 .block input:valid,
-.block input:focus{
+.block input:focus {
     border: 1px solid #101A8845;
     box-shadow:
         inset 0px 0px 10px #BFC3C933,
@@ -116,20 +146,20 @@ form{
 }
 
 
-.form-group textarea:focus{
+.form-group textarea:focus {
     border: 1px solid #101A8845;
     box-shadow:
         inset 0px 0px 10px #BFC3C933,
         inset 0px 0px 10px #101A8888,
         0px 0px 100px #101A8888,
         0px 0px 100px #BFC3C933;
-} 
+}
 
-.block input:focus ~i {
+.block input:focus~i {
     background-color: #0B1D5145;
 }
 
-.block i{
+.block i {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -149,7 +179,7 @@ fieldset input {
     font-size: 1.2rem;
 }
 
-.checkbox{
+.checkbox {
     display: flex;
     align-items: center;
     column-gap: 10px;
@@ -162,42 +192,42 @@ fieldset input {
     aspect-ratio: 1;
 }
 
-
 .subBtn {
-  padding-block: 0.7rem;
-  width: 100%;
-  color: #fff;
-  font-weight: 700;
-  border-radius: 0;
-  overflow: hidden;
-  position: relative;
-  outline: none;
-  border: 1px solid #fff;
-  background-color: transparent;
-  transition: 0.3s;
-  line-height: 1.5;
-  text-align: center;
-  font-size: 1rem;
+    margin-block: 20px;
+    padding-block: 0.7rem;
+    width: 100%;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 0;
+    overflow: hidden;
+    position: relative;
+    outline: none;
+    border: 1px solid #fff;
+    background-color: transparent;
+    transition: 0.3s;
+    line-height: 1.5;
+    text-align: center;
+    font-size: 1rem;
 }
 
 .subBtn::before {
-  content: "";
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(120deg, transparent, #fff, transparent);
-  transform: translateX(-100%);
-  transition: 0.6s;
-  position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(120deg, transparent, #fff, transparent);
+    transform: translateX(-100%);
+    transition: 0.6s;
+    position: absolute;
 }
 
 .subBtn:hover {
-  background-color: transparent;
-  border: 1px solid #101A88;
-  box-shadow: 0 0 20px 5px #101A88;
+    background-color: transparent;
+    border: 1px solid #101A88;
+    box-shadow: 0 0 20px 5px #101A88;
 }
 
 .subBtn:hover::before {
-  transform: translateX(100%);
+    transform: translateX(100%);
 }
