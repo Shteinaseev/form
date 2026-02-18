@@ -1,7 +1,8 @@
 class FormsValidation {
   selectors = {
     form: '[data-js-form]',
-    fieldErrors: '[data-js-form-field-errors]'
+    fieldErrors: '[data-js-form-field-errors]',
+    logLink: '[data-js-login-link]'
   }
 
   errorMessages = {
@@ -12,7 +13,10 @@ class FormsValidation {
   }
 
   constructor() {
+    this.logLink = document.querySelector(this.selectors.logLink);
+    this.form = document.querySelector(this.selectors.form);
     this.bindEvents()
+
   }
 
   manageErrors(fieldControlElement, errorMessages) {
@@ -97,6 +101,7 @@ class FormsValidation {
     }, { capture: true })
     document.addEventListener('change', (event) => this.onChange(event))
     document.addEventListener('submit', (event) => this.onSubmit(event))
+    this.logLink.addEventListener('click', () => this.form.classList.toggle('disactive'))
   }
 }
 
