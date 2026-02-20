@@ -40,19 +40,9 @@ input[type=number] {
     -moz-appearance: textfield;
 }
 
-#canvas-container {
-    width: 100vw;
-    height: 200vh;
-    aspect-ratio: 1;
-    position: fixed;
-    top: 20%;
-    left: 0;
-    z-index: -1;
-}
-
 body {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,22 +63,25 @@ span {
     font-size: 0.9rem;
 }
 
-form {
-    position: relative;
-    width: 28vw;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    border-radius: 25px;
-    overflow: hidden;
+form.disactive {
+    translate: -100%;
+
+    .form-group {
+        translate: -100%;
+    }
+
+    filter: blur(10px);
+    opacity: 0;
 }
 
-form.disactive {
-    .glass-content {
-        .form-group {
-            translate: -100%;
-        }
-    }
+.container {
+    position: relative;
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1.2rem;
+    border-radius: 25px;
+    overflow: hidden;
 }
 
 .form-switch {
@@ -130,13 +123,13 @@ form.disactive {
 .glass-content {
     position: relative;
     z-index: 4;
-    padding: 30px;
+    padding: 1.2rem;
     color: #081b29;
     height: 100%;
     overflow: hidden;
-    transition: .9s;
+    transition: calc(.1s * var(--i));
+    transition-delay: .2s;
 }
-
 
 .form-group {
     display: flex;

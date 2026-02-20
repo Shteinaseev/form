@@ -17,13 +17,13 @@
             <feDisplacementMap in="SourceGraphic" in2="noise" scale="77" />
         </filter>
     </svg>
-    <form id="regForm" action="/registration" method="post" novalidate data-js-form>
+    <section data-js class="container">
         <div class="glass-filter"></div>
         <div class="glass-overlay"></div>
         <div class="glass-specular"></div>
-        <div class="glass-content">
+        <form id="regForm" style="--i:15" action="/registration" novalidate data-js-form class="glass-content">
             <h1>Prijava na sistem</h1>
-            <div class="form-group" style="--i:10">
+            <div class="form-group" style="--i:5">
                 <label for="ur">Ime:</label>
                 <div class="block">
                     <input id="ur" name="name" class="field-control" type="text" minlength="3" maxlength="15" required
@@ -32,7 +32,7 @@
                 </div>
                 <span class="field-errors" id="name-errors" data-js-form-field-errors></span>
             </div>
-            <div class="form-group" style="--i:15">
+            <div class="form-group" style="--i:10">
                 <label for="pr">Prezime:</label>
                 <div class="block">
                     <input id="pr" name="surname" class="field-control" type="text" minlength="3" maxlength="15"
@@ -41,7 +41,7 @@
                 </div>
                 <span class="field-errors" id="surname-errors" data-js-form-field-errors></span>
             </div>
-            <div class="form-group" style="--i:20">
+            <div class="form-group" style="--i:15">
                 <label for="email">Email:</label>
                 <div class="block">
                     <input id="email" name="email" class="field-control" type="email" required
@@ -50,7 +50,7 @@
                 </div>
                 <span class="field-errors" id="email-errors" data-js-form-field-errors></span>
             </div>
-            <div class="form-group" style="--i:25">
+            <div class="form-group" style="--i:20">
                 <label for="username">Korisnicko ime:</label>
                 <div class="block">
                     <input id="username" name="username" class="field-control" type="text" required
@@ -59,7 +59,7 @@
                 </div>
                 <span class="field-errors" id="username-errors" data-js-form-field-errors></span>
             </div>
-            <div class="form-group" style="--i:30">
+            <div class="form-group" style="--i:25">
                 <label for="username">Lozinka:</label>
                 <div class="block">
                     <input id="username" name="username" class="field-control" type="text" required
@@ -68,7 +68,7 @@
                 </div>
                 <span class="field-errors" id="password-errors" data-js-form-field-errors></span>
             </div>
-            <div class="form-group" style="--i:35">
+            <div class="form-group" style="--i:30">
                 <label for="username">Potvrda lozinke:</label>
                 <div class="block">
                     <input id="username" name="username" class="field-control" type="text" required
@@ -77,10 +77,10 @@
                 </div>
                 <span class="field-errors" id="password-repeat-errors" data-js-form-field-errors></span>
             </div>
-            <button class="subBtn" type="submit">PRIJAVA</button>
+            <button style="--i:35" class="subBtn" type="submit">PRIJAVA</button>
             <p class="form-switch">Vec imate nalog? <a data-js-login-link href="#" class="switch-to-login">Login</a></p>
         </div>
-    </form>
+    </section>
 </body>
 
 </html>
