@@ -73,22 +73,27 @@ span {
     font-size: 0.9rem;
 }
 
-form {
+.wrapper {
     position: relative;
     width: 28vw;
     display: flex;
-    flex-direction: column;
-    padding: 20px;
+    padding: 1.2rem;
     border-radius: 25px;
     overflow: hidden;
 }
 
 form.disactive {
-    .glass-content {
-        .form-group {
-            translate: -100%;
-        }
+    translate: -100%;
+    filter: blur(10px);
+
+    .form-group,
+    button,
+    h1 {
+        filter: blur(10px);
+        opacity: .6;
+        translate: -120%;
     }
+
 }
 
 .form-switch {
@@ -127,14 +132,20 @@ form.disactive {
         0.6rem 0.6rem 2.5rem var(--color-dark-gray-2);
 }
 
+.glass-content,
+button,
+h1 {
+    transition-delay: calc(.1s * var(--i));
+}
+
 .glass-content {
-    position: relative;
+    position: absolute;
     z-index: 4;
     padding: 30px;
     color: #081b29;
     height: 100%;
     overflow: hidden;
-    transition: .9s;
+    transition-duration: 1s;
 }
 
 
@@ -143,7 +154,12 @@ form.disactive {
     flex-direction: column;
     gap: 5px;
     padding-block: 5px;
-    transition: calc(.1s * var(--i));
+    transition-delay: calc(.1s * var(--i));
+    transition-duration: .6s;
+}
+
+h1 {
+    transition-duration: .6s;
 }
 
 .form-group label {
@@ -171,8 +187,6 @@ form.disactive {
     height: 45px;
     perspective: 1000px;
 }
-
-
 
 .form-group textarea {
     height: 65px;
@@ -245,7 +259,7 @@ fieldset input {
     outline: none;
     border: 1px solid #fff;
     background-color: transparent;
-    transition: .6s ease-in-out;
+    transition-duration: .6s;
     line-height: 1.5;
     text-align: center;
     font-size: 1rem;
