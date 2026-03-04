@@ -1,5 +1,6 @@
 class FormsValidation {
   selectors = {
+    root: '[data-js]',
     form: '[data-js-form]',
     fieldErrors: '[data-js-form-field-errors]',
     logLink: '[data-js-login-link]'
@@ -13,6 +14,7 @@ class FormsValidation {
   }
 
   constructor() {
+    this.root =document.querySelector(this.selectors.root)
     this.logLink = document.querySelector(this.selectors.logLink);
     this.form = document.querySelector(this.selectors.form);
     this.bindEvents()
