@@ -1,0 +1,12 @@
+form.disactive {
+    translate: -100%;
+
+    .form-group,
+    h1,
+    button,
+    p {
+        translate: -120%;
+        filter: blur(10px);
+    }
+}
+

@@ -1,7 +1,8 @@
 class FormsValidation {
   selectors = {
     root: '[data-js]',
-    form: '[data-js-form]',
+    regForm: '[data-js-reg-form]',
+    logForm: '[data-js-log-form]',
     fieldErrors: '[data-js-form-field-errors]',
     logLink: '[data-js-login-link]'
   }
@@ -14,9 +15,10 @@ class FormsValidation {
   }
 
   constructor() {
-    this.root =document.querySelector(this.selectors.root)
+    this.root = document.querySelector(this.selectors.root)
     this.logLink = document.querySelector(this.selectors.logLink);
-    this.form = document.querySelector(this.selectors.form);
+    this.regForm = document.querySelector(this.selectors.regForm);
+    this.logForm = document.querySelector(this.selectors.logForm);
     this.bindEvents()
 
   }
@@ -103,7 +105,11 @@ class FormsValidation {
     }, { capture: true })
     document.addEventListener('change', (event) => this.onChange(event))
     document.addEventListener('submit', (event) => this.onSubmit(event))
-    this.logLink.addEventListener('click', () => this.form.classList.toggle('disactive'))
+    this.logLink.addEventListener('click', () => {
+      this.regForm.classList.toggle('disactive')
+      this.logForm.classList.toggle('disactive')
+
+    })
   }
 }
 
