@@ -23,10 +23,10 @@
         <div class="glass-filter"></div>
         <div class="glass-overlay"></div>
         <div class="glass-specular"></div>
-        <form id="regForm" action="/registration" method="post" novalidate data-js-reg-form class="glass-content animation"
-            style="--i:20">
-            <h1 class="animation" style="--i:1">Prijava na sistem</h1>
-            <div class="form-group animation" style="--i:3">
+        <form id="reg-form" action="/registration" method="post" novalidate data-js-reg-form
+            class="glass-content animation" style="--i:20; --j:12">
+            <h1 class="animation" style="--i:1; --j:7">Prijava na sistem</h1>
+            <div class="form-group animation" style="--i:3; --j:9">
                 <label for="ur">Ime:</label>
                 <div class="block">
                     <input id="ur" name="name" class="field-control" type="text" minlength="3" maxlength="15" required
@@ -35,7 +35,7 @@
                 </div>
                 <span class="field-errors" id="name-errors" data-js-form-field-errors></span>
             </div>
-            <div class="form-group animation" style="--i:5">
+            <div class="form-group animation" style="--i:5; --j:11">
                 <label for="pr">Prezime:</label>
                 <div class="block">
                     <input id="pr" name="surname" class="field-control" type="text" minlength="3" maxlength="15"
@@ -44,7 +44,7 @@
                 </div>
                 <span class="field-errors" id="surname-errors" data-js-form-field-errors></span>
             </div>
-            <div class="form-group animation" style="--i:7">
+            <div class="form-group animation" style="--i:7; --j:13">
                 <label for="email">Email:</label>
                 <div class="block">
                     <input id="email" name="email" class="field-control" type="email" required
@@ -53,7 +53,7 @@
                 </div>
                 <span class="field-errors" id="email-errors" data-js-form-field-errors></span>
             </div>
-            <div class="form-group animation" style="--i:9">
+            <div class="form-group animation" style="--i:9; --j:15">
                 <label for="username">Korisnicko ime:</label>
                 <div class="block">
                     <input id="username" name="username" class="field-control" type="text" required
@@ -62,7 +62,7 @@
                 </div>
                 <span class="field-errors" id="username-errors" data-js-form-field-errors></span>
             </div>
-            <div class="form-group animation" style="--i:11">
+            <div class="form-group animation" style="--i:11; --j:17">
                 <label for="username">Lozinka:</label>
                 <div class="block">
                     <input id="username" name="username" class="field-control" type="text" required
@@ -71,7 +71,7 @@
                 </div>
                 <span class="field-errors" id="password-errors" data-js-form-field-errors></span>
             </div>
-            <div class="form-group animation" style="--i:13">
+            <div class="form-group animation" style="--i:13; --j:19">
                 <label for="username">Potvrda lozinke:</label>
                 <div class="block">
                     <input id="username" name="username" class="field-control" type="text" required
@@ -80,14 +80,15 @@
                 </div>
                 <span class="field-errors" id="password-repeat-errors" data-js-form-field-errors></span>
             </div>
-            <button style="--i:15" class="subBtn animation" type="submit">PRIJAVA</button>
-            <p style="--i:17" class="form-switch">Vec imate nalog? <a data-js-login-link href="#"
-                    class="switch-to-login animation">Login</a></p>
+            <button style="--i:15; --j:22" class="subBtn animation" type="submit">Registrirujte se</button>
+            <p style="--i:17; --j:24" class="form-switch animation">Vec imate nalog? <a data-js-login-link href="#"
+                    class="switch-link animation">Login</a></p>
         </form>
 
-        <form id="logForm" action="/login" method="get" novalidate data-js-log-form class="glass-content disactive">
-            <h1 style="--i:1">Ulogovanje u sistem</h1>
-            <div class="form-group" style="--i:1">
+        <form style="--i:12; --j:20" id="log-form" action="/login" method="get" novalidate data-js-log-form
+            class="glass-content animation">
+            <h1 class="animation" style="--i:1; --j:14">Ulogovanje u sistem</h1>
+            <div class="form-group animation" style="--i:3; --j:16">
                 <label for="username">Korisnicko ime:</label>
                 <div class="block">
                     <input id="username" name="username" class="field-control" type="text" required
@@ -96,7 +97,7 @@
                 </div>
                 <span class="field-errors" id="username-errors" data-js-form-field-errors></span>
             </div>
-            <div class="form-group" style="--i:11">
+            <div class="form-group animation" style="--i:5; --j:18">
                 <label for="username">Lozinka:</label>
                 <div class="block">
                     <input id="username" name="username" class="field-control" type="text" required
@@ -105,6 +106,14 @@
                 </div>
                 <span class="field-errors" id="password-errors" data-js-form-field-errors></span>
             </div>
+            <button style="--i:7; --j:20" class="subBtn animation" type="submit">Prijavite se</button>
+
+            <p style="--i:9; --j:22" class="form-switch animation">
+                Nemate nalog?
+                <a data-js-register-link href="#" class="switch-link">Registrujte se
+                </a>
+            </p>
+
         </form>
     </section>
 </body>

@@ -1,3 +1,21 @@
-form {
-    translate: -100%;
+#log-form {
+
+    pointer-events: none;
+
+    .animation {
+        translate: 120%;
+        opacity: .6;
+        filter: blur(10px);
+    }
+
+    &.active {
+        translate: 0%;
+        pointer-events: all;
+
+        .animation {
+            translate: 0%;
+            opacity: 1;
+            filter: blur(0);
+        }
+    }
 }

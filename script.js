@@ -4,7 +4,8 @@ class FormsValidation {
     regForm: '[data-js-reg-form]',
     logForm: '[data-js-log-form]',
     fieldErrors: '[data-js-form-field-errors]',
-    logLink: '[data-js-login-link]'
+    logLink: '[data-js-login-link]',
+    regLink: '[data-js-register-link]'
   }
 
   errorMessages = {
@@ -17,10 +18,12 @@ class FormsValidation {
   constructor() {
     this.root = document.querySelector(this.selectors.root)
     this.logLink = document.querySelector(this.selectors.logLink);
+    this.regLink = document.querySelector(this.selectors.regLink);
+
     this.regForm = document.querySelector(this.selectors.regForm);
     this.logForm = document.querySelector(this.selectors.logForm);
+    this.regForm.classList.add('active')
     this.bindEvents()
-
   }
 
   manageErrors(fieldControlElement, errorMessages) {
@@ -106,9 +109,12 @@ class FormsValidation {
     document.addEventListener('change', (event) => this.onChange(event))
     document.addEventListener('submit', (event) => this.onSubmit(event))
     this.logLink.addEventListener('click', () => {
-      this.regForm.classList.toggle('disactive')
-      this.logForm.classList.toggle('disactive')
-
+      this.regForm.classList.remove('active')
+      this.logForm.classList.add('active')
+    })
+    this.regLink.addEventListener('click', () => {
+      this.logForm.classList.remove('active')
+      this.regForm.classList.add('active')
     })
   }
 }

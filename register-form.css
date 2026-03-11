@@ -1,12 +1,18 @@
-form.disactive {
-    translate: -100%;
-
-    .form-group,
-    h1,
-    button,
-    p {
+#reg-form {
+    .animation {
         translate: -120%;
+        opacity: .6;
         filter: blur(10px);
     }
-}
 
+    &.active {
+        translate: 0%;
+
+        .animation {
+            translate: 0%;
+            opacity: 1;
+            filter: blur(0);
+        }
+    }
+
+}
